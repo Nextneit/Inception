@@ -1,5 +1,5 @@
 all:
-	@docker compose -f ./srcs/docker-compose.yml up -d --build
+	@docker compose up -f ./srcs/docker-compose.yml -d --build
 down:
 	@docker compose -f ./srcs/docker-compose.yml down
 clean:

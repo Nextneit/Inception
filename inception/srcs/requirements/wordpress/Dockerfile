@@ -1,6 +1,6 @@
 FROM debian:bullseye
 
-RUN apt-get update && apt-get -y install curl php7.3-fpm php7.3-mysqli mariadb-client
+RUN apt-get update && apt-get upgrade -y && apt-get install -y curl wget php7.3 php-fpm php-mysql1 mariadb-client
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 
