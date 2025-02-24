@@ -1,6 +1,6 @@
 networks:
-  ncruz-ganet:
-    name: ncruz-ganet
+  inception:
+    name: inception
     driver: bridge
 services:
   nginx:
@@ -13,7 +13,7 @@ services:
       - wordpress_data:/var/www/html
     restart: always
     networks:
-      - ncruz-ganet
+      - inception
   mariadb:
     container_name: mariadb
     build:
@@ -23,7 +23,7 @@ services:
       - mariadb_data:/var/lib/mysql
     restart: always
     networks:
-      - ncruz-ganet
+      - inception
     env_file:
       - .env
   wordpress:
@@ -36,7 +36,7 @@ services:
       - wordpress_data:/var/www/html
     restart: always
     networks:
-      - ncruz-ganet
+      - inception
     env_file:
       - .env
 volumes:
@@ -44,7 +44,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/ncruz-ga/data/mysql
+      device: /home/ncruz-ga/data/mariadb
       o: bind
   wordpress_data:
     driver: local

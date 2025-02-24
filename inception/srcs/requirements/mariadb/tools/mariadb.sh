@@ -1,5 +1,6 @@
 #!/bin/bash
-service mysql start
+mysqld &
+sleep 3
 
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ];
 then
@@ -12,4 +13,4 @@ fi
 
 mysqladmin -u ${MYSQL_ROOT_USER} --password=${MYSQL_ROOT_PASSWORD} shutdown
 
-mysqld
+mysqld_safe

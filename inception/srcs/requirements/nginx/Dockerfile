@@ -12,4 +12,4 @@ RUN chmod +x /var/www/nginx_start.sh
 
 CMD [ "nginx", "-g", "daemon off;" ]
 
-ENTRYPOINT [ "var/www/nginx_start.sh" ]
+ENTRYPOINT [ "/var/www/nginx_start.sh" ]
